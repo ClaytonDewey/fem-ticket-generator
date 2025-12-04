@@ -1,0 +1,86 @@
+@use '../util' as *;
+
+.form {
+  position: relative;
+  z-index: 1;
+  fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: rem(24);
+    border: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: rem(522);
+
+    @include breakpoint(desktop) {
+      max-width: rem(460);
+    }
+  }
+
+  &-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: rem(50);
+    width: rem(50);
+    border: rem(1) solid var(--neutral-700);
+    border-radius: var(--br-12);
+    margin-block-end: rem(16);
+    box-shadow: 0 rem(2) rem(4) rem(-2) #040128;
+  }
+
+  &-group {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: rem(12);
+
+    .upload {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: rem(126);
+      border: rem(1) dashed var(--neutral-500);
+      border-radius: var(--br-12);
+      color: var(--neutral-300);
+
+      p {
+        font: var(--text-preset-6);
+        letter-spacing: var(--ls-0);
+      }
+    }
+
+    p {
+      color: var(--neutral-300);
+      font: var(--text-preset-7);
+      letter-spacing: var(--ls--2);
+
+      svg {
+        height: rem(16);
+        width: rem(16);
+        vertical-align: bottom;
+      }
+    }
+
+    label {
+      font: var(--text-preset-5);
+      letter-spacing: var(--ls--5);
+      color: var(--neutral-0);
+    }
+
+    input {
+      display: flex;
+      align-items: center;
+      background: transparent;
+      border: rem(1) solid var(--neutral-500);
+      padding-inline: rem(16);
+      height: rem(54);
+      border-radius: var(--br-12);
+      font: inherit;
+    }
+  }
+}
+
+input[type='file'] {
+}

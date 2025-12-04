@@ -1,0 +1,33 @@
+@use '../util' as *;
+
+.btn {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  transition: var(--transition);
+
+  &-primary {
+    position: relative;
+    height: rem(54);
+    background-color: var(--orange-500);
+    color: var(--neutral-900);
+    font: var(--text-preset-5-extra);
+    letter-spacing: var(--ls--3);
+    border-radius: var(--br-12);
+
+    &:hover {
+      background-color: var(--orange-700);
+      box-shadow: 0 rem(4) 0 0 var(--orange-500);
+    }
+
+    &:focus {
+      outline: rem(1) solid var(--neutral-0);
+      outline-offset: rem(2);
+      box-shadow: 0 0 0 rem(3) #000, 0 0 0 rem(4) var(--neutral-0);
+    }
+  }
+}

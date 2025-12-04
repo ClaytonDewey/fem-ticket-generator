@@ -1,0 +1,82 @@
+@use '../util' as *;
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  gap: rem(40);
+  max-width: rem(891);
+  margin-inline: auto;
+  margin-block-end: rem(40);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: rem(23.86);
+    right: rem(-16);
+    background-image: url('../../images/pattern-squiggly-line-top.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: rem(112);
+    height: rem(52.23);
+  }
+
+  &__logo {
+    svg {
+      width: rem(166.53);
+      height: rem(24);
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: rem(20);
+    font: var(--text-preset-4);
+    letter-spacing: var(--ls--5);
+    color: var(--neutral-300);
+
+    h1 {
+      font: var(--text-preset-1);
+      letter-spacing: var(--ls--1);
+      color: var(--neutral-0);
+    }
+  }
+
+  @include breakpoint(tablet) {
+    padding-block-start: rem(40);
+    gap: rem(60);
+
+    &::before {
+      top: rem(88);
+      height: rem(108.2);
+      width: rem(232);
+      right: 0;
+    }
+
+    &__logo {
+      svg {
+        width: rem(208.66);
+        height: rem(30);
+      }
+    }
+
+    &__text {
+      gap: rem(20);
+    }
+  }
+
+  @include breakpoint(desktop) {
+    &::before {
+      height: rem(208);
+      width: rem(446);
+      right: rem(-250);
+    }
+  }
+}

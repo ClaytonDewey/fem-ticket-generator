@@ -1,0 +1,65 @@
+@use '../util' as *;
+
+:root {
+  // Colors - Neutral
+  --neutral-900: #0d082d;
+  --neutral-700: #4b4869;
+  --neutral-500: #8784a5;
+  --neutral-300: #d1d0d5;
+  --neutral-0: #ffffff;
+
+  // Orange
+  --orange-700: #e1604f;
+  --orange-500: #f57463;
+
+  // Gradient
+  --start: #f37362;
+  --end: var(--neutral-0);
+  --gradient: linear-gradient(90deg, var(--start) 0%, var(--end) 100%);
+
+  // Typography
+  --ff-primary: 'Inconsolata', monospace;
+
+  // Text Presets
+  --text-preset-1: normal normal 800 #{rem(30)} / 110% var(--ff-primary); // --ls--1
+  --text-preset-2: normal normal 700 #{rem(24)} / 110% var(--ff-primary); // --ls--1
+  --text-preset-3: normal normal 600 #{rem(22)} / 110% var(--ff-primary); // --ls--1
+  --text-preset-4: normal normal 500 #{rem(20)} / 120% var(--ff-primary); // --ls--5
+  --text-preset-5: normal normal 500 #{rem(20)} / 110% var(--ff-primary); // --ls--5
+  --text-preset-5-extra: normal normal 800 #{rem(20)} / 110% var(--ff-primary); // --ls--3
+  --text-preset-6: normal normal 500 #{rem(14)} / 120% var(--ff-primary); // --ls-0
+  --text-preset-7: normal normal 400 #{rem(12)} / 120% var(--ff-primary); // --ls--2
+
+  @include breakpoint(tablet) {
+    --text-preset-1: normal normal 800 #{rem(60)} / 110% var(--ff-primary); // --ls--1
+    --text-preset-2: normal normal 700 #{rem(40)} / 110% var(--ff-primary); // --ls--1
+    --text-preset-3: normal normal 600 #{rem(30)} / 110% var(--ff-primary); // --ls--1
+    --text-preset-4: normal normal 500 #{rem(24)} / 120% var(--ff-primary); // --ls--5
+    --text-preset-6: normal normal 500 #{rem(18)} / 120% var(--ff-primary); // --ls-0
+  }
+
+  // Letter Spacing
+  --ls--1: #{rem(-1)};
+  --ls--5: #{rem(-0.5)};
+  --ls--3: #{rem(-0.3)};
+  --ls--2: #{rem(-0.2)};
+  --ls-0: #{rem(0)};
+
+  // Misc
+  --transition: all 0.3s ease-in-out;
+
+  @media (prefers-reduced-motion: reduce) {
+    --transition: none;
+  }
+
+  // Border-Radius
+  --br-4: #{rem(4)};
+  --br-6: #{rem(6)};
+  --br-8: #{rem(8)};
+  --br-10: #{rem(10)};
+  --br-12: #{rem(12)};
+  --br-16: #{rem(16)};
+  --br-20: #{rem(20)};
+  --br-24: #{rem(24)};
+  --br-full: #{rem(9999)};
+}
