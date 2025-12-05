@@ -2,11 +2,9 @@ import { useState } from 'react';
 import { Button, FileUpload, Input } from '.';
 import useTicketStore from '../store/useTicketStore';
 import { Icon } from '../svg';
-import e from 'express';
 
 const Form = () => {
-  const { name, email, gitUser, setName, setEmail, setGitUser } =
-    useTicketStore();
+  const { setName, setEmail, setGitUser, setIsSubmitted } = useTicketStore();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -52,6 +50,7 @@ const Form = () => {
       setName(formData.name);
       setEmail(formData.email);
       setGitUser(formData.gitUser);
+      setIsSubmitted(true);
       console.log('Form submitted successfully:', formData);
       setErrors({});
       setFormData({
@@ -78,17 +77,11 @@ const Form = () => {
             name='name'
             value={formData.name}
             onChange={handleChange}
-            required
           />
           {errors.name && (
-            <>
-              <div className='is-invalid icon'>
-                <Icon name='info' />
-              </div>
-              <div className='is-invalid'>
-                <p className='error-message'>{errors.name}</p>
-              </div>
-            </>
+            <p className='error-message'>
+              <Icon name='info' /> {errors.name}
+            </p>
           )}
         </div>
         <div className={`form-group ${errors.email ? 'is-invalid-input' : ''}`}>
@@ -100,18 +93,12 @@ const Form = () => {
             name='email'
             value={formData.email}
             onChange={handleChange}
-            required
             placeholder='example@email.com'
           />
           {errors.email && (
-            <>
-              <div className='is-invalid icon'>
-                <Icon name='info' />
-              </div>
-              <div className='is-invalid'>
-                <p className='error-message'>{errors.email}</p>
-              </div>
-            </>
+            <p className='error-message'>
+              <Icon name='info' /> {errors.email}
+            </p>
           )}
         </div>
         <div
@@ -124,18 +111,12 @@ const Form = () => {
             name='gitUser'
             value={formData.gitUser}
             onChange={handleChange}
-            required
             placeholder='@yourusername'
           />
           {errors.gitUser && (
-            <>
-              <div className='is-invalid icon'>
-                <Icon name='info' />
-              </div>
-              <div className='is-invalid'>
-                <p className='error-message'>{errors.gitUser}</p>
-              </div>
-            </>
+            <p className='error-message'>
+              <Icon name='info' /> {errors.gitUser}
+            </p>
           )}
         </div>
         <Button type='submit' className='btn btn-primary'>

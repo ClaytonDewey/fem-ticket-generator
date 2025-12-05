@@ -6,7 +6,7 @@ import { Icon } from '../svg';
 import useTicketStore from '../store/useTicketStore';
 
 const FileUpload = () => {
-  const { avatar, setAvatar } = useTicketStore();
+  const { setAvatar } = useTicketStore();
   const [files, setFiles] = useState<File[]>([]);
   const [previewUrl, setPreviewUrl] = useState<string>('');
 
@@ -30,7 +30,7 @@ const FileUpload = () => {
     if (files.length > 0) {
       const url = URL.createObjectURL(files[0]);
       setPreviewUrl(url);
-
+      setAvatar(url); // Update the avatar in the store
       // Cleanup: revoke the object URL when component unmounts or file changes
       return () => {
         URL.revokeObjectURL(url);
@@ -38,7 +38,7 @@ const FileUpload = () => {
     } else {
       setPreviewUrl('');
     }
-  }, [files]);
+  }, [files, setAvatar]);
 
   const handleRemoveImage = (e: React.MouseEvent) => {
     e.stopPropagation();

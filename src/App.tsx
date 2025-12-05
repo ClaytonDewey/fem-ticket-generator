@@ -1,18 +1,26 @@
 import { Header, Form, Ticket, Footer } from './components';
-import avatarImg from './images/image-avatar.jpg';
+import useTicketStore from './store/useTicketStore';
 
 const App = () => {
+  const { name, avatar, gitUser, ticketNum, isSubmitted } = useTicketStore();
   return (
     <>
       <Header />
       <main>
-        <Form />
-        {/* <Ticket
-          name='Clayton Dewey'
-          avatar={avatarImg}
-          gitUser='ClaytonDewey'
-          ticketNum={1609}
-        /> */}
+        {!isSubmitted ? (
+          <>
+            <Form />
+          </>
+        ) : (
+          <>
+            <Ticket
+              name={name}
+              avatar={avatar}
+              gitUser={gitUser}
+              ticketNum={ticketNum}
+            />
+          </>
+        )}
       </main>
       <Footer />
     </>
