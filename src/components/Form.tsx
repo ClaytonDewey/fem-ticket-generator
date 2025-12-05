@@ -1,36 +1,142 @@
+import { useState } from 'react';
 import { Button, FileUpload, Input } from '.';
+import useTicketStore from '../store/useTicketStore';
+import { Icon } from '../svg';
+import e from 'express';
 
 const Form = () => {
+  const { name, email, gitUser, setName, setEmail, setGitUser } =
+    useTicketStore();
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    gitUser: '',
+  });
+  const [errors, setErrors] = useState<{ [key: string]: string }>({});
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    // Use function updates to ensure latest state is used
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+    // Clear error for the field being edited
+    setErrors((prevErrors) => ({
+      ...prevErrors,
+      [name]: '',
+    }));
+  };
+
+  const validateInput = () => {
+    const newErrors: { [key: string]: string } = {};
+
+    if (formData.name === '') {
+      newErrors.name = 'Name is required';
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      newErrors.email = 'Please enter a valid email address';
+    }
+    if (formData.gitUser === '') {
+      newErrors.gitUser = 'GitHub username is required';
+    }
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (validateInput()) {
+      // Handle form submission logic here
+      setName(formData.name);
+      setEmail(formData.email);
+      setGitUser(formData.gitUser);
+      console.log('Form submitted successfully:', formData);
+      setErrors({});
+      setFormData({
+        name: '',
+        email: '',
+        gitUser: '',
+      });
+    } else {
+      console.log('Form has errors:', errors);
+    }
+  };
+
   return (
-    <form className='form'>
+    <form className='form' onSubmit={handleSubmit}>
       <fieldset>
         <legend className='sr-only'>Personal Information</legend>
         <FileUpload />
-        <div className='form-group'>
+        <div className={`form-group ${errors.name ? 'is-invalid-input' : ''}`}>
           <label htmlFor='name'>Full Name</label>
-          <Input className='blur' type='text' id='name' name='name' required />
+          <Input
+            className='blur'
+            type='text'
+            id='name'
+            name='name'
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
+          {errors.name && (
+            <>
+              <div className='is-invalid icon'>
+                <Icon name='info' />
+              </div>
+              <div className='is-invalid'>
+                <p className='error-message'>{errors.name}</p>
+              </div>
+            </>
+          )}
         </div>
-        <div className='form-group'>
+        <div className={`form-group ${errors.email ? 'is-invalid-input' : ''}`}>
           <label htmlFor='email'>Email Address</label>
           <Input
             className='blur'
             type='email'
             id='email'
             name='email'
+            value={formData.email}
+            onChange={handleChange}
             required
             placeholder='example@email.com'
           />
+          {errors.email && (
+            <>
+              <div className='is-invalid icon'>
+                <Icon name='info' />
+              </div>
+              <div className='is-invalid'>
+                <p className='error-message'>{errors.email}</p>
+              </div>
+            </>
+          )}
         </div>
-        <div className='form-group'>
+        <div
+          className={`form-group ${errors.gitUser ? 'is-invalid-input' : ''}`}>
           <label htmlFor='gitUser'>GitHub Username</label>
           <Input
             className='blur'
             type='text'
             id='gitUser'
             name='gitUser'
+            value={formData.gitUser}
+            onChange={handleChange}
             required
             placeholder='@yourusername'
           />
+          {errors.gitUser && (
+            <>
+              <div className='is-invalid icon'>
+                <Icon name='info' />
+              </div>
+              <div className='is-invalid'>
+                <p className='error-message'>{errors.gitUser}</p>
+              </div>
+            </>
+          )}
         </div>
         <Button type='submit' className='btn btn-primary'>
           Generate My Ticket

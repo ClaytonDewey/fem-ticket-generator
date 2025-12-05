@@ -30,4 +30,19 @@
       box-shadow: 0 0 0 rem(3) #000, 0 0 0 rem(4) var(--neutral-0);
     }
   }
+
+  &-edit {
+    border-radius: var(--br-4);
+    background-color: rgba(255, 255, 255, 0.1);
+    height: rem(22);
+    width: rem(85);
+    color: var(--neutral-300);
+    font: var(--text-preset-7);
+    letter-spacing: var(--ls--2);
+  }
+
+  &-container {
+    display: flex;
+    gap: rem(8);
+  }
 }

@@ -9,7 +9,7 @@ interface TicketState {
 
   setAvatar: (avatar: string) => void;
   setName: (name: string) => void;
-
+  setEmail: (email: string) => void;
   setGitUser: (gitUser: string) => void;
   setTicketNum: (ticketNum: number) => void;
 }
