@@ -8,11 +8,12 @@ const Form = () => {
         <FileUpload />
         <div className='form-group'>
           <label htmlFor='name'>Full Name</label>
-          <Input type='text' id='name' name='name' required />
+          <Input className='blur' type='text' id='name' name='name' required />
         </div>
         <div className='form-group'>
           <label htmlFor='email'>Email Address</label>
           <Input
+            className='blur'
             type='email'
             id='email'
             name='email'
@@ -23,6 +24,7 @@ const Form = () => {
         <div className='form-group'>
           <label htmlFor='gitUser'>GitHub Username</label>
           <Input
+            className='blur'
             type='text'
             id='gitUser'
             name='gitUser'

@@ -1,3 +1,4 @@
+import avatarImg from '../images/image-avatar.jpg';
 import React, { useCallback, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { Input } from '.';
@@ -27,8 +28,9 @@ const FileUpload = () => {
   return (
     <div className='form-group' {...getRootProps()}>
       <label htmlFor='avatar'>Upload Avatar:</label>
-      <div className='upload'>
-        <div className='form-icon'>
+      <div className='upload blur'>
+        {/* <img src={avatarImg} alt="" className='form-icon' /> */}
+        <div className='form-icon blur'>
           <Icon name='upload' />
         </div>
         <Input name='avatar' id='avatar' {...getInputProps()} />

@@ -23,10 +23,11 @@
     justify-content: center;
     height: rem(50);
     width: rem(50);
-    border: rem(1) solid var(--neutral-700);
+    border: rem(1) solid var(--neutral-500);
     border-radius: var(--br-12);
     margin-block-end: rem(16);
     box-shadow: 0 rem(2) rem(4) rem(-2) #040128;
+    overflow: hidden;
   }
 
   &-group {
@@ -36,14 +37,12 @@
     gap: rem(12);
 
     .upload {
+      cursor: pointer;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       height: rem(126);
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(5px); /* Blur the content behind the element */
-      -webkit-backdrop-filter: blur(5px); /* For Safari compatibility */
       border: rem(1) dashed var(--neutral-500);
       border-radius: var(--br-12);
       color: var(--neutral-300);
@@ -73,19 +72,36 @@
     }
 
     input {
+      cursor: pointer;
       display: flex;
       align-items: center;
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(5px); /* Blur the content behind the element */
-      -webkit-backdrop-filter: blur(5px); /* For Safari compatibility */
       border: rem(1) solid var(--neutral-500);
+      color: var(--neutral-0);
       padding-inline: rem(16);
       height: rem(54);
       border-radius: var(--br-12);
       font: inherit;
+
+      &::placeholder {
+        color: var(--neutral-300);
+      }
+
+      &:focus {
+        outline: rem(1) solid var(--neutral-0);
+        outline-offset: rem(2);
+        box-shadow: 0 0 0 rem(3) #000, 0 0 0 rem(4) var(--neutral-0);
+      }
     }
   }
 }
 
-input[type='file'] {
+.blur {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(5px); /* Blur the content behind the element */
+  -webkit-backdrop-filter: blur(5px); /* For Safari compatibility */
+  transition: var(--transition);
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
 }
