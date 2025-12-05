@@ -21,6 +21,7 @@
   --ff-primary: 'Inconsolata', monospace;
 
   // Text Presets
+  // TODO: rewrite font sizes using calc();
   --text-preset-1: normal normal 800 #{rem(30)} / 110% var(--ff-primary); // --ls--1
   --text-preset-2: normal normal 700 #{rem(24)} / 110% var(--ff-primary); // --ls--1
   --text-preset-3: normal normal 700 #{rem(22)} / 110% var(--ff-primary); // --ls--1

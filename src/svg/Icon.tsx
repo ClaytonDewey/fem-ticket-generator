@@ -25,7 +25,7 @@ const Icon = ({ name }: { name: string }) => {
       return <PatternCircle />;
     case 'pattern-lines':
       return <PatternLines />;
-    case 'pattern-ticket':
+    case 'ticket':
       return <PatternTicket />;
     default:
       return null;

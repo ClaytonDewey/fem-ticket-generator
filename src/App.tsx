@@ -6,13 +6,13 @@ const App = () => {
     <>
       <Header />
       <main>
-        {/* <Form /> */}
-        <Ticket
+        <Form />
+        {/* <Ticket
           name='Clayton Dewey'
           avatar={avatarImg}
           gitUser='ClaytonDewey'
           ticketNum={1609}
-        />
+        /> */}
       </main>
     </>
   );

@@ -12,6 +12,10 @@
   margin-inline: auto;
   margin-block-end: rem(40);
 
+  &.complete {
+    margin-block-end: rem(72);
+  }
+
   &::before {
     content: '';
     position: absolute;
@@ -62,8 +66,12 @@
   }
 
   @include breakpoint(tablet) {
-    padding-block-start: rem(40);
+    padding-block-start: rem(45);
     gap: rem(60);
+
+    &.complete {
+      margin-block-end: rem(80);
+    }
 
     &::before {
       top: rem(88);
@@ -85,6 +93,10 @@
   }
 
   @include breakpoint(desktop) {
+    &.complete {
+      margin-block-end: rem(109);
+    }
+
     &::before {
       height: rem(208);
       width: rem(446);
