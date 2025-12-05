@@ -1,0 +1,113 @@
+@use '../util' as *;
+
+.ticket {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-image: url('../../images/pattern-ticket.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  max-width: rem(600);
+  margin-inline: auto;
+  padding: rem(16) 0 rem(16) rem(16);
+
+  @include breakpoint(tablet) {
+    padding: rem(24) 0 rem(24) rem(24);
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: rem(32);
+
+    @include breakpoint(tablet) {
+      gap: rem(74);
+    }
+  }
+
+  &__header {
+    display: flex;
+    gap: rem(12);
+
+    &-logo {
+      svg {
+        height: rem(29);
+        width: rem(29);
+      }
+    }
+
+    &-text {
+      h2 {
+        font: var(--text-preset-2);
+        letter-spacing: var(--ls--1);
+        margin-block-end: rem(8);
+      }
+    }
+
+    &-meta {
+      font: var(--text-preset-6);
+      letter-spacing: var(--ls--2);
+      color: var(--neutral-300);
+    }
+
+    @include breakpoint(tablet) {
+      &-logo {
+        svg {
+          height: rem(40);
+          width: rem(40);
+        }
+      }
+    }
+  }
+
+  &__info {
+    display: flex;
+    gap: rem(12);
+
+    .avatar {
+      width: rem(45);
+      height: rem(45);
+      border-radius: var(--br-8);
+    }
+
+    h3 {
+      font-weight: 500;
+      font-size: rem(20);
+      letter-spacing: rem(-1);
+      margin-block-end: rem(4);
+    }
+
+    &-text {
+      .git-user {
+        display: flex;
+        align-items: center;
+        gap: rem(6);
+        font: var(--text-preset-6);
+
+        svg {
+          height: rem(12.48);
+          width: rem(12.48);
+        }
+      }
+    }
+
+    @include breakpoint(tablet) {
+      gap: rem(16);
+
+      .avatar {
+        width: rem(80);
+        height: rem(80);
+      }
+    }
+  }
+
+  &__number {
+    transform: rotate(90deg);
+    font: var(--text-preset-3);
+    font-weight: 500;
+    letter-spacing: var(--ls--1);
+    color: var(--neutral-500);
+  }
+}

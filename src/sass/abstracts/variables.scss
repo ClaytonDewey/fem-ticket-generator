@@ -23,7 +23,7 @@
   // Text Presets
   --text-preset-1: normal normal 800 #{rem(30)} / 110% var(--ff-primary); // --ls--1
   --text-preset-2: normal normal 700 #{rem(24)} / 110% var(--ff-primary); // --ls--1
-  --text-preset-3: normal normal 600 #{rem(22)} / 110% var(--ff-primary); // --ls--1
+  --text-preset-3: normal normal 700 #{rem(22)} / 110% var(--ff-primary); // --ls--1
   --text-preset-4: normal normal 500 #{rem(20)} / 120% var(--ff-primary); // --ls--5
   --text-preset-5: normal normal 500 #{rem(20)} / 110% var(--ff-primary); // --ls--5
   --text-preset-5-extra: normal normal 800 #{rem(20)} / 110% var(--ff-primary); // --ls--3
@@ -33,7 +33,7 @@
   @include breakpoint(tablet) {
     --text-preset-1: normal normal 800 #{rem(60)} / 110% var(--ff-primary); // --ls--1
     --text-preset-2: normal normal 700 #{rem(40)} / 110% var(--ff-primary); // --ls--1
-    --text-preset-3: normal normal 600 #{rem(30)} / 110% var(--ff-primary); // --ls--1
+    --text-preset-3: normal normal 700 #{rem(30)} / 110% var(--ff-primary); // --ls--1
     --text-preset-4: normal normal 500 #{rem(24)} / 120% var(--ff-primary); // --ls--5
     --text-preset-6: normal normal 500 #{rem(18)} / 120% var(--ff-primary); // --ls-0
   }

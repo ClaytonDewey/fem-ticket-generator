@@ -46,6 +46,18 @@
       font: var(--text-preset-1);
       letter-spacing: var(--ls--1);
       color: var(--neutral-0);
+
+      span {
+        background-image: var(--gradient);
+        background-clip: text;
+        --webkit-background-clip: text;
+        color: transparent;
+        --webkit-text-fill-color: transparent;
+      }
+    }
+
+    p span {
+      color: var(--orange-500);
     }
   }
 

@@ -42,6 +42,7 @@ body {
 
 body {
   position: relative;
+  min-height: 100vh;
   padding-block-start: rem(33);
   padding-block-end: rem(114);
   padding-inline: rem(16);
