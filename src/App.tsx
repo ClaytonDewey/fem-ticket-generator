@@ -1,4 +1,4 @@
-import { Header, Form, Ticket } from './components';
+import { Header, Form, Ticket, Footer } from './components';
 import avatarImg from './images/image-avatar.jpg';
 
 const App = () => {
@@ -14,6 +14,7 @@ const App = () => {
           ticketNum={1609}
         /> */}
       </main>
+      <Footer />
     </>
   );
 };
