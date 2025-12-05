@@ -23,7 +23,9 @@ const Ticket = ({ name, avatar, gitUser, ticketNum }: TicketProps) => {
             </div>
           </div>
           <div className='ticket__info'>
-            <img src={avatar} alt={name} className='avatar' />
+            <div className='avatar'>
+              <img src={avatar} alt={name} />
+            </div>
             <div className='ticket__info-text'>
               <h3>{name}</h3>
               <div className='git-user'>

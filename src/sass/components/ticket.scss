@@ -79,9 +79,22 @@
     gap: rem(12);
 
     .avatar {
+      position: relative;
       width: rem(45);
       height: rem(45);
+      overflow: hidden;
       border-radius: var(--br-8);
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: rem(60);
+        height: rem(60);
+        object-fit: cover;
+        border-radius: var(--br-8);
+      }
     }
 
     h3 {
@@ -111,6 +124,29 @@
       .avatar {
         width: rem(80);
         height: rem(80);
+        border-radius: var(--br-12);
+
+        img {
+          width: rem(97);
+          height: rem(97);
+          border-radius: var(--br-12);
+        }
+      }
+
+      h3 {
+        font-size: rem(30);
+      }
+
+      &-text {
+        .git-user {
+          font: var(--text-preset-5);
+          gap: rem(10);
+
+          svg {
+            height: rem(17.16);
+            width: rem(17.16);
+          }
+        }
       }
     }
   }
