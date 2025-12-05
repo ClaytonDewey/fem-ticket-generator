@@ -1,0 +1,49 @@
+@use '../util' as *;
+
+.footer {
+  position: relative;
+  z-index: 2;
+  margin-block-start: rem(60);
+  width: 100%;
+  text-align: center;
+  line-height: 130%;
+  font-size: clamp(rem(12), 1vw, rem(14));
+
+  a {
+    position: relative;
+    display: inline-block;
+    color: var(--orange-500);
+    text-decoration: none;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      border-bottom: rem(1) solid var(--orange-500);
+      width: 0;
+      transition: var(--transition);
+    }
+
+    &::before {
+      right: 50%;
+    }
+
+    &::after {
+      left: 50%;
+    }
+
+    &:hover {
+      &::before,
+      &::after {
+        width: 50%;
+      }
+    }
+  }
+
+  @include breakpoint(tablet) {
+    br {
+      display: none;
+    }
+  }
+}
