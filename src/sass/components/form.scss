@@ -74,6 +74,10 @@
         width: rem(16);
         vertical-align: bottom;
       }
+
+      &.error-message {
+        color: var(--orange-500);
+      }
     }
 
     label {
@@ -102,6 +106,18 @@
         outline-offset: rem(2);
         box-shadow: 0 0 0 rem(3) #000, 0 0 0 rem(4) var(--neutral-0);
       }
+    }
+  }
+}
+
+.is-invalid-input {
+  position: relative;
+  input {
+    border-color: var(--orange-00);
+
+    &:focus {
+      outline: rem(1) solid var(--orange-00);
+      box-shadow: 0 0 0 rem(3) #000, 0 0 0 rem(4) var(--orange-500);
     }
   }
 }

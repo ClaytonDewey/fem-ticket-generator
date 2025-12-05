@@ -50,7 +50,14 @@ const FileUpload = () => {
     // The dropzone will handle the file selection
   };
 
-  const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({
+    maxSize: 500000, // 500KB
+    accept: {
+      'image/jpeg': ['.jpeg', '.jpg'],
+      'image/png': ['.png'],
+    },
+    onDrop,
+  });
 
   return (
     <div className='form-group' {...getRootProps()}>
