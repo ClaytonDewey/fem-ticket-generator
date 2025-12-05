@@ -105,8 +105,8 @@ const PatternTicket = () => {
           y1='26.462'
           y2='306.194'
           gradientUnits='userSpaceOnUse'>
-          <stop stopColor='#fff' stop-opacity='.3' />
-          <stop offset='1' stopColor='#fff' stop-opacity='.1' />
+          <stop stopColor='#fff' stopOpacity='.3' />
+          <stop offset='1' stopColor='#fff' stopOpacity='.1' />
         </linearGradient>
         <linearGradient
           id={gradientId2}

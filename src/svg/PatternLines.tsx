@@ -38,8 +38,8 @@ const PatternLines = () => {
           y1='0'
           y2='1024'
           gradientUnits='userSpaceOnUse'>
-          <stop stopColor='#fff' stop-opacity='.15' />
-          <stop offset='.745' stopColor='#fff' stop-opacity='0' />
+          <stop stopColor='#fff' stopOpacity='.15' />
+          <stop offset='.745' stopColor='#fff' stopOpacity='0' />
         </linearGradient>
         <linearGradient
           id={fillId}
@@ -48,8 +48,8 @@ const PatternLines = () => {
           y1='0'
           y2='1024'
           gradientUnits='userSpaceOnUse'>
-          <stop stopColor='#fff' stop-opacity='.15' />
-          <stop offset='.745' stopColor='#fff' stop-opacity='0' />
+          <stop stopColor='#fff' stopOpacity='.15' />
+          <stop offset='.745' stopColor='#fff' stopOpacity='0' />
         </linearGradient>
         <linearGradient
           id={fillId}
@@ -58,8 +58,8 @@ const PatternLines = () => {
           y1='0'
           y2='1024'
           gradientUnits='userSpaceOnUse'>
-          <stop stopColor='#fff' stop-opacity='.15' />
-          <stop offset='.745' stopColor='#fff' stop-opacity='0' />
+          <stop stopColor='#fff' stopOpacity='.15' />
+          <stop offset='.745' stopColor='#fff' stopOpacity='0' />
         </linearGradient>
         <linearGradient
           id={fillId}
@@ -68,8 +68,8 @@ const PatternLines = () => {
           y1='0'
           y2='1024'
           gradientUnits='userSpaceOnUse'>
-          <stop stopColor='#fff' stop-opacity='.15' />
-          <stop offset='.745' stopColor='#fff' stop-opacity='0' />
+          <stop stopColor='#fff' stopOpacity='.15' />
+          <stop offset='.745' stopColor='#fff' stopOpacity='0' />
         </linearGradient>
         <linearGradient
           id={fillId}
@@ -78,8 +78,8 @@ const PatternLines = () => {
           y1='0'
           y2='1024'
           gradientUnits='userSpaceOnUse'>
-          <stop stopColor='#fff' stop-opacity='.15' />
-          <stop offset='.745' stopColor='#fff' stop-opacity='0' />
+          <stop stopColor='#fff' stopOpacity='.15' />
+          <stop offset='.745' stopColor='#fff' stopOpacity='0' />
         </linearGradient>
         <linearGradient
           id={fillId}
@@ -88,8 +88,8 @@ const PatternLines = () => {
           y1='0'
           y2='1024'
           gradientUnits='userSpaceOnUse'>
-          <stop stopColor='#fff' stop-opacity='.15' />
-          <stop offset='.745' stopColor='#fff' stop-opacity='0' />
+          <stop stopColor='#fff' stopOpacity='.15' />
+          <stop offset='.745' stopColor='#fff' stopOpacity='0' />
         </linearGradient>
         <linearGradient
           id={fillId}
@@ -98,8 +98,8 @@ const PatternLines = () => {
           y1='0'
           y2='1024'
           gradientUnits='userSpaceOnUse'>
-          <stop stopColor='#fff' stop-opacity='.15' />
-          <stop offset='.745' stopColor='#fff' stop-opacity='0' />
+          <stop stopColor='#fff' stopOpacity='.15' />
+          <stop offset='.745' stopColor='#fff' stopOpacity='0' />
         </linearGradient>
         <linearGradient
           id={fillId}
@@ -108,8 +108,8 @@ const PatternLines = () => {
           y1='0'
           y2='1024'
           gradientUnits='userSpaceOnUse'>
-          <stop stopColor='#fff' stop-opacity='.15' />
-          <stop offset='.745' stopColor='#fff' stop-opacity='0' />
+          <stop stopColor='#fff' stopOpacity='.15' />
+          <stop offset='.745' stopColor='#fff' stopOpacity='0' />
         </linearGradient>
         <linearGradient
           id={fillId}
@@ -118,8 +118,8 @@ const PatternLines = () => {
           y1='0'
           y2='1024'
           gradientUnits='userSpaceOnUse'>
-          <stop stopColor='#fff' stop-opacity='.15' />
-          <stop offset='.745' stopColor='#fff' stop-opacity='0' />
+          <stop stopColor='#fff' stopOpacity='.15' />
+          <stop offset='.745' stopColor='#fff' stopOpacity='0' />
         </linearGradient>
         <linearGradient
           id={fillId}
@@ -128,8 +128,8 @@ const PatternLines = () => {
           y1='0'
           y2='1024'
           gradientUnits='userSpaceOnUse'>
-          <stop stopColor='#fff' stop-opacity='.15' />
-          <stop offset='.745' stopColor='#fff' stop-opacity='0' />
+          <stop stopColor='#fff' stopOpacity='.15' />
+          <stop offset='.745' stopColor='#fff' stopOpacity='0' />
         </linearGradient>
         <linearGradient
           id={fillId}
@@ -138,8 +138,8 @@ const PatternLines = () => {
           y1='0'
           y2='1024'
           gradientUnits='userSpaceOnUse'>
-          <stop stopColor='#fff' stop-opacity='.15' />
-          <stop offset='.745' stopColor='#fff' stop-opacity='0' />
+          <stop stopColor='#fff' stopOpacity='.15' />
+          <stop offset='.745' stopColor='#fff' stopOpacity='0' />
         </linearGradient>
         <linearGradient
           id={fillId}
@@ -148,8 +148,8 @@ const PatternLines = () => {
           y1='0'
           y2='1024'
           gradientUnits='userSpaceOnUse'>
-          <stop stopColor='#fff' stop-opacity='.15' />
-          <stop offset='.745' stopColor='#fff' stop-opacity='0' />
+          <stop stopColor='#fff' stopOpacity='.15' />
+          <stop offset='.745' stopColor='#fff' stopOpacity='0' />
         </linearGradient>
         <linearGradient
           id={fillId}
@@ -158,8 +158,8 @@ const PatternLines = () => {
           y1='0'
           y2='1024'
           gradientUnits='userSpaceOnUse'>
-          <stop stopColor='#fff' stop-opacity='.15' />
-          <stop offset='.745' stopColor='#fff' stop-opacity='0' />
+          <stop stopColor='#fff' stopOpacity='.15' />
+          <stop offset='.745' stopColor='#fff' stopOpacity='0' />
         </linearGradient>
         <linearGradient
           id={fillId}
@@ -168,8 +168,8 @@ const PatternLines = () => {
           y1='0'
           y2='1024'
           gradientUnits='userSpaceOnUse'>
-          <stop stopColor='#fff' stop-opacity='.15' />
-          <stop offset='.745' stopColor='#fff' stop-opacity='0' />
+          <stop stopColor='#fff' stopOpacity='.15' />
+          <stop offset='.745' stopColor='#fff' stopOpacity='0' />
         </linearGradient>
         <linearGradient
           id={fillId}
@@ -178,8 +178,8 @@ const PatternLines = () => {
           y1='0'
           y2='1024'
           gradientUnits='userSpaceOnUse'>
-          <stop stopColor='#fff' stop-opacity='.15' />
-          <stop offset='.745' stopColor='#fff' stop-opacity='0' />
+          <stop stopColor='#fff' stopOpacity='.15' />
+          <stop offset='.745' stopColor='#fff' stopOpacity='0' />
         </linearGradient>
         <linearGradient
           id={fillId}
@@ -188,8 +188,8 @@ const PatternLines = () => {
           y1='0'
           y2='1024'
           gradientUnits='userSpaceOnUse'>
-          <stop stopColor='#fff' stop-opacity='.15' />
-          <stop offset='.745' stopColor='#fff' stop-opacity='0' />
+          <stop stopColor='#fff' stopOpacity='.15' />
+          <stop offset='.745' stopColor='#fff' stopOpacity='0' />
         </linearGradient>
         <linearGradient
           id={fillId}
@@ -198,8 +198,8 @@ const PatternLines = () => {
           y1='0'
           y2='1024'
           gradientUnits='userSpaceOnUse'>
-          <stop stopColor='#fff' stop-opacity='.15' />
-          <stop offset='.745' stopColor='#fff' stop-opacity='0' />
+          <stop stopColor='#fff' stopOpacity='.15' />
+          <stop offset='.745' stopColor='#fff' stopOpacity='0' />
         </linearGradient>
         <linearGradient
           id={fillId}
@@ -208,8 +208,8 @@ const PatternLines = () => {
           y1='0'
           y2='1024'
           gradientUnits='userSpaceOnUse'>
-          <stop stopColor='#fff' stop-opacity='.15' />
-          <stop offset='.745' stopColor='#fff' stop-opacity='0' />
+          <stop stopColor='#fff' stopOpacity='.15' />
+          <stop offset='.745' stopColor='#fff' stopOpacity='0' />
         </linearGradient>
         <linearGradient
           id={fillId}
@@ -218,8 +218,8 @@ const PatternLines = () => {
           y1='0'
           y2='1024'
           gradientUnits='userSpaceOnUse'>
-          <stop stopColor='#fff' stop-opacity='.15' />
-          <stop offset='.745' stopColor='#fff' stop-opacity='0' />
+          <stop stopColor='#fff' stopOpacity='.15' />
+          <stop offset='.745' stopColor='#fff' stopOpacity='0' />
         </linearGradient>
       </defs>
     </svg>
