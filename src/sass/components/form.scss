@@ -41,6 +41,9 @@
       align-items: center;
       justify-content: center;
       height: rem(126);
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(5px); /* Blur the content behind the element */
+      -webkit-backdrop-filter: blur(5px); /* For Safari compatibility */
       border: rem(1) dashed var(--neutral-500);
       border-radius: var(--br-12);
       color: var(--neutral-300);
@@ -72,7 +75,9 @@
     input {
       display: flex;
       align-items: center;
-      background: transparent;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(5px); /* Blur the content behind the element */
+      -webkit-backdrop-filter: blur(5px); /* For Safari compatibility */
       border: rem(1) solid var(--neutral-500);
       padding-inline: rem(16);
       height: rem(54);
