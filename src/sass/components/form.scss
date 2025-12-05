@@ -18,6 +18,7 @@
   }
 
   &-icon {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -28,6 +29,16 @@
     margin-block-end: rem(16);
     box-shadow: 0 rem(2) rem(4) rem(-2) #040128;
     overflow: hidden;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: rem(57);
+      height: rem(57);
+      object-fit: cover;
+    }
   }
 
   &-group {

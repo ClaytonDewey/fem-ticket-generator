@@ -1,5 +1,5 @@
 import avatarImg from '../images/image-avatar.jpg';
-import React, { useCallback, useState } from 'react';
+import { useCallback, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { Input } from '.';
 import { Icon } from '../svg';
@@ -29,10 +29,12 @@ const FileUpload = () => {
     <div className='form-group' {...getRootProps()}>
       <label htmlFor='avatar'>Upload Avatar:</label>
       <div className='upload blur'>
-        {/* <img src={avatarImg} alt="" className='form-icon' /> */}
-        <div className='form-icon blur'>
-          <Icon name='upload' />
+        <div className='form-icon'>
+          <img src={avatarImg} alt='Avatar' />
         </div>
+        {/* <div className='form-icon blur'>
+          <Icon name='upload' />
+        </div> */}
         <Input name='avatar' id='avatar' {...getInputProps()} />
         {isDragActive ? (
           <p>Drop the files here ...</p>
