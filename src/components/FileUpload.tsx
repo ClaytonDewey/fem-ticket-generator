@@ -67,7 +67,10 @@ const FileUpload = () => {
         <Input name='avatar' id='avatar' {...getInputProps()} />
         {files.length > 0 ? (
           <div className='btn-container'>
-            <button className='btn btn-edit blur' onClick={handleRemoveImage}>
+            <button
+              className='btn btn-edit blur'
+              style={{ textDecoration: 'underline' }}
+              onClick={handleRemoveImage}>
               Remove Image
             </button>
             <button className='btn btn-edit blur' onClick={handleChangeImage}>
