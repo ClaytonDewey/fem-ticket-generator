@@ -61,6 +61,7 @@ body {
   }
 
   @include breakpoint(tablet) {
+    padding-block-start: rem(40);
     padding-inline: 0;
 
     &::after {

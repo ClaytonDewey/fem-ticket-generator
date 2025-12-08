@@ -8,7 +8,7 @@
   text-align: center;
   position: relative;
   gap: rem(40);
-  max-width: rem(891);
+  max-width: rem(700);
   margin-inline: auto;
   margin-block-end: rem(40);
 
@@ -19,7 +19,7 @@
   &::before {
     content: '';
     position: absolute;
-    top: rem(23.86);
+    top: 0;
     right: rem(-16);
     background-image: url('../../images/pattern-squiggly-line-top.svg');
     background-repeat: no-repeat;
@@ -60,13 +60,16 @@
       }
     }
 
+    p {
+      max-width: rem(514);
+    }
+
     p span {
       color: var(--orange-500);
     }
   }
 
   @include breakpoint(tablet) {
-    padding-block-start: rem(45);
     gap: rem(60);
 
     &.complete {
@@ -74,10 +77,10 @@
     }
 
     &::before {
-      top: rem(88);
+      top: rem(48);
       height: rem(108.2);
       width: rem(232);
-      right: 0;
+      right: rem(-32);
     }
 
     &__logo {
@@ -88,11 +91,12 @@
     }
 
     &__text {
-      gap: rem(20);
+      gap: rem(32);
     }
   }
 
   @include breakpoint(desktop) {
+    max-width: rem(891);
     &.complete {
       margin-block-end: rem(109);
     }

@@ -11,13 +11,21 @@ const Form = () => {
     gitUser: '',
   });
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
+  const [isGitUserFocused, setIsGitUserFocused] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
+
+    // Remove "@" prefix from gitUser if present
+    let processedValue = value;
+    if (name === 'gitUser' && value.startsWith('@')) {
+      processedValue = value.slice(1);
+    }
+
     // Use function updates to ensure latest state is used
     setFormData((prevData) => ({
       ...prevData,
-      [name]: value,
+      [name]: processedValue,
     }));
     // Clear error for the field being edited
     setErrors((prevErrors) => ({
@@ -51,7 +59,6 @@ const Form = () => {
       setEmail(formData.email);
       setGitUser(formData.gitUser);
       setIsSubmitted(true);
-      console.log('Form submitted successfully:', formData);
       setErrors({});
       setFormData({
         name: '',
@@ -109,8 +116,10 @@ const Form = () => {
             type='text'
             id='gitUser'
             name='gitUser'
-            value={formData.gitUser}
+            value={isGitUserFocused ? `@${formData.gitUser}` : formData.gitUser}
             onChange={handleChange}
+            onFocus={() => setIsGitUserFocused(true)}
+            onBlur={() => setIsGitUserFocused(false)}
             placeholder='@yourusername'
           />
           {errors.gitUser && (

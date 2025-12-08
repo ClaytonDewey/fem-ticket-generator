@@ -28,7 +28,7 @@
   --text-preset-4: normal normal 500 #{rem(20)} / 120% var(--ff-primary); // --ls--5
   --text-preset-5: normal normal 500 #{rem(20)} / 110% var(--ff-primary); // --ls--5
   --text-preset-5-extra: normal normal 800 #{rem(20)} / 110% var(--ff-primary); // --ls--3
-  --text-preset-6: normal normal 500 #{rem(14)} / 120% var(--ff-primary); // --ls-0
+  --text-preset-6: normal normal 400 #{rem(14)} / 120% var(--ff-primary); // --ls-0
   --text-preset-7: normal normal 400 #{rem(12)} / 120% var(--ff-primary); // --ls--2
 
   @include breakpoint(tablet) {
@@ -36,7 +36,7 @@
     --text-preset-2: normal normal 700 #{rem(40)} / 110% var(--ff-primary); // --ls--1
     --text-preset-3: normal normal 700 #{rem(30)} / 110% var(--ff-primary); // --ls--1
     --text-preset-4: normal normal 500 #{rem(24)} / 120% var(--ff-primary); // --ls--5
-    --text-preset-6: normal normal 500 #{rem(18)} / 120% var(--ff-primary); // --ls-0
+    --text-preset-6: normal normal 400 #{rem(18)} / 120% var(--ff-primary); // --ls-0
   }
 
   // Letter Spacing

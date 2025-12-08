@@ -1,42 +1,45 @@
-import { useCallback, useEffect, useState } from 'react';
-import { useDropzone } from 'react-dropzone';
+import { useEffect, useState } from 'react';
+import { FileWithPath, useDropzone } from 'react-dropzone';
 import { Input } from '.';
 import { Icon } from '../svg';
 
 import useTicketStore from '../store/useTicketStore';
 
-const FileUpload = () => {
-  const { setAvatar } = useTicketStore();
-  const [files, setFiles] = useState<File[]>([]);
-  const [previewUrl, setPreviewUrl] = useState<string>('');
+interface DropzoneFile extends File {
+  preview: string;
+}
 
-  const onDrop = useCallback((acceptedFiles: File[]) => {
-    setFiles(acceptedFiles); // Store the dropped files in state
-    // You can also process or upload files here
-    acceptedFiles.forEach((file) => {
-      const reader = new FileReader();
-      reader.onabort = () => console.log('file reading was aborted');
-      reader.onerror = () => console.log('file reading has failed');
-      reader.onload = () => {
-        // Do whatever you want with the file contents
-        const binaryStr = reader.result;
-        console.log(binaryStr);
-      };
-      reader.readAsArrayBuffer(file);
+const FileUpload = () => {
+  const { avatar, setAvatar } = useTicketStore();
+  const [files, setFiles] = useState<DropzoneFile[]>([]);
+  const { getRootProps, getInputProps, isDragActive, fileRejections } =
+    useDropzone({
+      maxSize: 500000, // 500KB
+      maxFiles: 1,
+      accept: {
+        'image/jpeg': ['.jpeg', '.jpg'],
+        'image/png': ['.png'],
+      },
+      onDrop: (acceptedFiles: FileWithPath[]) => {
+        setFiles(
+          acceptedFiles.map((file) =>
+            Object.assign(file, {
+              preview: URL.createObjectURL(file),
+            })
+          )
+        );
+      },
     });
-  }, []);
 
   useEffect(() => {
     if (files.length > 0) {
-      const url = URL.createObjectURL(files[0]);
-      setPreviewUrl(url);
-      setAvatar(url); // Update the avatar in the store
-      // Cleanup: revoke the object URL when component unmounts or file changes
-      return () => {
-        URL.revokeObjectURL(url);
-      };
+      const { preview } = files[0];
+      console.log(preview);
+      setAvatar(files[0].preview as string);
+      // Make sure to revoke the data uris to avoid memory leaks, will run on unmount
+      return () => files.forEach((file) => URL.revokeObjectURL(file.preview));
     } else {
-      setPreviewUrl('');
+      setAvatar('');
     }
   }, [files, setAvatar]);
 
@@ -50,22 +53,13 @@ const FileUpload = () => {
     // The dropzone will handle the file selection
   };
 
-  const { getRootProps, getInputProps, isDragActive } = useDropzone({
-    maxSize: 500000, // 500KB
-    accept: {
-      'image/jpeg': ['.jpeg', '.jpg'],
-      'image/png': ['.png'],
-    },
-    onDrop,
-  });
-
   return (
     <div className='form-group' {...getRootProps()}>
       <label htmlFor='avatar'>Upload Avatar:</label>
       <div className='upload blur'>
         <div className='form-icon blur'>
-          {previewUrl ? (
-            <img src={previewUrl} alt='Avatar Preview' />
+          {avatar ? (
+            <img src={avatar} alt='Avatar Preview' />
           ) : (
             <Icon name='upload' />
           )}
@@ -86,9 +80,23 @@ const FileUpload = () => {
           <p>Drag and drop or click to upload</p>
         )}
       </div>
-      <p>
-        <Icon name='info' /> Upload your photo (JPG or PNG, max size: 500KB).
-      </p>
+      {fileRejections.length > 0 ? (
+        <>
+          {fileRejections.map((file, errors) => (
+            <div key={file.file.path}>
+              {file.errors.map((error) => (
+                <p key={error.code} className='error-message'>
+                  <Icon name='info' /> {error.message}
+                </p>
+              ))}
+            </div>
+          ))}
+        </>
+      ) : (
+        <p>
+          <Icon name='info' /> Upload your photo (JPG or PNG, max size: 500KB).
+        </p>
+      )}
     </div>
   );
 };

@@ -4,7 +4,7 @@ import useTicketStore from '../store/useTicketStore';
 const Header = () => {
   const { isSubmitted, name, email } = useTicketStore();
   return (
-    <header className='header'>
+    <header className={`header ${isSubmitted ? 'complete' : ''}`}>
       <div className='header__logo'>
         <Icon name='logo' />
       </div>
