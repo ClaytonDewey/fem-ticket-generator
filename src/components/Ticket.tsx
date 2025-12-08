@@ -4,7 +4,7 @@ type TicketProps = {
   name: string;
   avatar: string;
   gitUser: string;
-  ticketNum: number;
+  ticketNum: string;
 };
 
 const Ticket = ({ name, avatar, gitUser, ticketNum }: TicketProps) => {
@@ -34,7 +34,7 @@ const Ticket = ({ name, avatar, gitUser, ticketNum }: TicketProps) => {
             </div>
           </div>
         </div>
-        <div className='ticket__number'>#0{ticketNum}</div>
+        <div className='ticket__number'>#{ticketNum}</div>
       </div>
     </section>
   );
