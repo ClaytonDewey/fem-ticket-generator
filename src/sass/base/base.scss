@@ -11,23 +11,12 @@
 html {
   font-style: normal;
   font-weight: normal;
-}
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
   background-color: var(--neutral-900);
   background-image: url('../../images/pattern-lines.svg'),
     url('../../images/background-mobile.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
-  color: var(--neutral-0);
-  font-family: var(--ff-primary);
-  box-sizing: border-box;
-  overflow-x: hidden;
 
   @include breakpoint(tablet) {
     background-image: url('../../images/pattern-lines.svg'),
@@ -38,6 +27,17 @@ body {
     background-image: url('../../images/pattern-lines.svg'),
       url('../../images/background-desktop.png');
   }
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  color: var(--neutral-0);
+  font-family: var(--ff-primary);
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 body {
@@ -72,6 +72,9 @@ body {
 
   @include breakpoint(desktop) {
     padding-block-end: rem(134);
+    background-image: url('../../images/pattern-circle.svg');
+    background-repeat: no-repeat;
+    background-position: rem(200) rem(-100);
 
     &::after {
       background-image: url('../../images/pattern-squiggly-line-bottom-desktop.svg');

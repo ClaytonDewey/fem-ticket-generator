@@ -6,9 +6,28 @@
   margin-inline: auto;
   z-index: 2;
 
+  @include breakpoint(desktop) {
+    &::after {
+      position: absolute;
+      content: '';
+      top: 50%;
+      transform: translateY(-50%);
+      right: rem(-130);
+      background-image: url('../../images/pattern-circle.svg');
+      height: rem(217);
+      width: rem(217);
+      z-index: -2;
+    }
+  }
+
   svg {
+    position: relative;
+    z-index: 20;
     max-width: 100%;
     height: auto;
+    background: var(--neutral-900);
+    backdrop-filter: blur(5px); /* Blur the content behind the element */
+    -webkit-backdrop-filter: blur(5px); /* For Safari compatibility */
   }
 
   &__body {
@@ -21,6 +40,7 @@
     align-items: center;
     justify-content: space-between;
     padding: rem(16) 0 rem(16) rem(16);
+    z-index: 100;
 
     @include breakpoint(tablet) {
       padding: rem(24) 0 rem(24) rem(24);
