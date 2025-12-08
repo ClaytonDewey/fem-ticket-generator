@@ -12,7 +12,7 @@ interface DropzoneFile extends File {
 const FileUpload = () => {
   const { avatar, setAvatar } = useTicketStore();
   const [files, setFiles] = useState<DropzoneFile[]>([]);
-  const { getRootProps, getInputProps, isDragActive, fileRejections } =
+  const { getRootProps, getInputProps, open, isDragActive, fileRejections } =
     useDropzone({
       maxSize: 500000, // 500KB
       maxFiles: 1,
@@ -51,6 +51,8 @@ const FileUpload = () => {
   const handleChangeImage = (e: React.MouseEvent) => {
     e.stopPropagation();
     // The dropzone will handle the file selection
+    setFiles([]);
+    open();
   };
 
   return (
@@ -68,12 +70,16 @@ const FileUpload = () => {
         {files.length > 0 ? (
           <div className='btn-container'>
             <button
+              type='button'
               className='btn btn-edit blur'
               style={{ textDecoration: 'underline' }}
               onClick={handleRemoveImage}>
               Remove Image
             </button>
-            <button className='btn btn-edit blur' onClick={handleChangeImage}>
+            <button
+              type='button'
+              className='btn btn-edit blur'
+              onClick={handleChangeImage}>
               Change Image
             </button>
           </div>
@@ -85,7 +91,7 @@ const FileUpload = () => {
       </div>
       {fileRejections.length > 0 ? (
         <>
-          {fileRejections.map((file, errors) => (
+          {fileRejections.map((file) => (
             <div key={file.file.path}>
               {file.errors.map((error) => (
                 <p key={error.code} className='error-message'>
