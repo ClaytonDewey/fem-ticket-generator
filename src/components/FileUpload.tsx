@@ -106,7 +106,12 @@ const FileUpload = ({ error }: FileUploadProps) => {
             <div key={file.file.path}>
               {file.errors.map((error) => (
                 <p key={error.code} className='error-message'>
-                  <Icon name='info' /> {error.message}
+                  <Icon name='info' />{' '}
+                  {error.code === 'file-too-large'
+                    ? 'File too large. Max size is 500KB.'
+                    : error.code === 'file-invalid-type'
+                    ? 'Invalid file type. Only JPG and PNG are allowed.'
+                    : error.message}
                 </p>
               ))}
             </div>
