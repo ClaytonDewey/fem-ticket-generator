@@ -1,5 +1,6 @@
 export { default as IconGithub } from './Github';
 export { default as Icon } from './Icon';
+export { default as IconClose } from './Close';
 export { default as IconInfo } from './Info';
 export { default as LogoFull } from './LogoFull';
 export { default as LogoMark } from './LogoMark';

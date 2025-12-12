@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Button, FileUpload, Input } from '.';
+import { useEffect, useState } from 'react';
+import { Button, ImageUploadModal, Input } from '.';
 import useTicketStore from '../store/useTicketStore';
 import { Icon } from '../svg';
 
@@ -13,6 +13,26 @@ const Form = () => {
   });
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const [isGitUserFocused, setIsGitUserFocused] = useState(false);
+  const [profileImage, setProfileImage] = useState<string>();
+  const [openImageUploadModal, setOpenImageUploadModal] =
+    useState<boolean>(false);
+  const [profileImageUpdated, setProfileImageUpdated] =
+    useState<boolean>(false);
+
+  useEffect(() => {
+    const _userProfilePic = avatar || undefined;
+    if (_userProfilePic) setProfileImage(_userProfilePic);
+    else setProfileImage(undefined);
+  }, [profileImageUpdated, avatar]);
+
+  const onEditClick = () => {
+    setProfileImageUpdated(false);
+    setOpenImageUploadModal(true);
+  };
+  const handleClose = () => {
+    setProfileImageUpdated(true);
+    setOpenImageUploadModal(false);
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -75,68 +95,86 @@ const Form = () => {
   };
 
   return (
-    <form className='form' onSubmit={handleSubmit}>
-      <fieldset>
-        <legend className='sr-only'>Personal Information</legend>
-        <FileUpload error={errors.avatar} />
-        <div className={`form-group ${errors.name ? 'is-invalid-input' : ''}`}>
-          <label htmlFor='name'>Full Name</label>
-          <Input
-            className='blur'
-            type='text'
-            id='name'
-            name='name'
-            value={formData.name}
-            onChange={handleChange}
-          />
-          {errors.name && (
-            <p className='error-message'>
-              <Icon name='info' /> {errors.name}
-            </p>
-          )}
-        </div>
-        <div className={`form-group ${errors.email ? 'is-invalid-input' : ''}`}>
-          <label htmlFor='email'>Email Address</label>
-          <Input
-            className='blur'
-            type='email'
-            id='email'
-            name='email'
-            value={formData.email}
-            onChange={handleChange}
-            placeholder='example@email.com'
-          />
-          {errors.email && (
-            <p className='error-message'>
-              <Icon name='info' /> {errors.email}
-            </p>
-          )}
-        </div>
-        <div
-          className={`form-group ${errors.gitUser ? 'is-invalid-input' : ''}`}>
-          <label htmlFor='gitUser'>GitHub Username</label>
-          <Input
-            className='blur'
-            type='text'
-            id='gitUser'
-            name='gitUser'
-            value={isGitUserFocused ? `@${formData.gitUser}` : formData.gitUser}
-            onChange={handleChange}
-            onFocus={() => setIsGitUserFocused(true)}
-            onBlur={() => setIsGitUserFocused(false)}
-            placeholder='@yourusername'
-          />
-          {errors.gitUser && (
-            <p className='error-message'>
-              <Icon name='info' /> {errors.gitUser}
-            </p>
-          )}
-        </div>
-        <Button type='submit' className='btn btn-primary'>
-          Generate My Ticket
-        </Button>
-      </fieldset>
-    </form>
+    <>
+      <form className='form' onSubmit={handleSubmit}>
+        <fieldset>
+          <legend className='sr-only'>Personal Information</legend>
+          {/* <FileUpload error={errors.avatar} /> */}
+          <img src={profileImage} alt='Profile' />
+          <Button type='button' onClick={onEditClick}>
+            Upload Image
+          </Button>
+          <div
+            className={`form-group ${errors.name ? 'is-invalid-input' : ''}`}>
+            <label htmlFor='name'>Full Name</label>
+            <Input
+              className='blur'
+              type='text'
+              id='name'
+              name='name'
+              value={formData.name}
+              onChange={handleChange}
+            />
+            {errors.name && (
+              <p className='error-message'>
+                <Icon name='info' /> {errors.name}
+              </p>
+            )}
+          </div>
+          <div
+            className={`form-group ${errors.email ? 'is-invalid-input' : ''}`}>
+            <label htmlFor='email'>Email Address</label>
+            <Input
+              className='blur'
+              type='email'
+              id='email'
+              name='email'
+              value={formData.email}
+              onChange={handleChange}
+              placeholder='example@email.com'
+            />
+            {errors.email && (
+              <p className='error-message'>
+                <Icon name='info' /> {errors.email}
+              </p>
+            )}
+          </div>
+          <div
+            className={`form-group ${
+              errors.gitUser ? 'is-invalid-input' : ''
+            }`}>
+            <label htmlFor='gitUser'>GitHub Username</label>
+            <Input
+              className='blur'
+              type='text'
+              id='gitUser'
+              name='gitUser'
+              value={
+                isGitUserFocused ? `@${formData.gitUser}` : formData.gitUser
+              }
+              onChange={handleChange}
+              onFocus={() => setIsGitUserFocused(true)}
+              onBlur={() => setIsGitUserFocused(false)}
+              placeholder='@yourusername'
+            />
+            {errors.gitUser && (
+              <p className='error-message'>
+                <Icon name='info' /> {errors.gitUser}
+              </p>
+            )}
+          </div>
+          <Button type='submit' className='btn btn-primary'>
+            Generate My Ticket
+          </Button>
+        </fieldset>
+      </form>
+      {openImageUploadModal && (
+        <ImageUploadModal
+          handleClose={() => handleClose()}
+          openModal={openImageUploadModal}
+        />
+      )}
+    </>
   );
 };
 export default Form;

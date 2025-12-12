@@ -2,6 +2,7 @@ import {
   IconGithub,
   IconInfo,
   IconUpload,
+  IconClose,
   LogoFull,
   LogoMark,
   MoveIcon,
@@ -16,6 +17,8 @@ import {
 
 const Icon = ({ name }: { name: string }) => {
   switch (name) {
+    case 'close':
+      return <IconClose />;
     case 'github':
       return <IconGithub />;
     case 'info':
