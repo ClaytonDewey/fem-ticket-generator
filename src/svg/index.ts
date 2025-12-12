@@ -1,9 +1,13 @@
 export { default as IconGithub } from './Github';
 export { default as Icon } from './Icon';
 export { default as IconInfo } from './Info';
-export { default as IconUpload } from './Upload';
 export { default as LogoFull } from './LogoFull';
 export { default as LogoMark } from './LogoMark';
+export { default as MoveIcon } from './MoveIcon';
 export { default as PatternCircle } from './PatternCircle';
 export { default as PatternLines } from './PatternLines';
 export { default as PatternTicket } from './PatternTicket';
+export { default as RotateIcon } from './RotateIcon';
+export { default as IconUpload } from './Upload';
+export { default as ZoomInIcon } from './ZoomInIcon';
+export { default as ZoomOutIcon } from './ZoomOutIcon';
