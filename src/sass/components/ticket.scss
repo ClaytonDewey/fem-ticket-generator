@@ -25,9 +25,8 @@
     z-index: 20;
     max-width: 100%;
     height: auto;
-    background: var(--neutral-900);
-    backdrop-filter: blur(5px); /* Blur the content behind the element */
-    -webkit-backdrop-filter: blur(5px); /* For Safari compatibility */
+    backdrop-filter: blur(10px); /* Blur the content behind the element */
+    -webkit-backdrop-filter: blur(10px); /* For Safari compatibility */
   }
 
   &__body {

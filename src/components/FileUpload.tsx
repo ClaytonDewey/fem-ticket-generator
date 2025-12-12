@@ -9,7 +9,11 @@ interface DropzoneFile extends File {
   preview: string;
 }
 
-const FileUpload = () => {
+interface FileUploadProps {
+  error?: string;
+}
+
+const FileUpload = ({ error }: FileUploadProps) => {
   const { avatar, setAvatar } = useTicketStore();
   const [files, setFiles] = useState<DropzoneFile[]>([]);
   const { getRootProps, getInputProps, open, isDragActive, fileRejections } =
@@ -56,7 +60,9 @@ const FileUpload = () => {
   };
 
   return (
-    <div className='form-group' {...getRootProps()}>
+    <div
+      className={`form-group ${error ? 'is-invalid-input' : ''}`}
+      {...getRootProps()}>
       <label htmlFor='avatar'>Upload Avatar:</label>
       <div className='upload blur'>
         <div className='form-icon blur'>
@@ -89,7 +95,12 @@ const FileUpload = () => {
           <p>Drag and drop or click to upload</p>
         )}
       </div>
-      {fileRejections.length > 0 ? (
+      {error && (
+        <p className='error-message'>
+          <Icon name='info' /> {error}
+        </p>
+      )}
+      {fileRejections.length > 0 && (
         <>
           {fileRejections.map((file) => (
             <div key={file.file.path}>
@@ -101,7 +112,8 @@ const FileUpload = () => {
             </div>
           ))}
         </>
-      ) : (
+      )}
+      {!error && fileRejections.length === 0 && (
         <p>
           <Icon name='info' /> Upload your photo (JPG or PNG, max size: 500KB).
         </p>

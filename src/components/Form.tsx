@@ -4,7 +4,8 @@ import useTicketStore from '../store/useTicketStore';
 import { Icon } from '../svg';
 
 const Form = () => {
-  const { setName, setEmail, setGitUser, setIsSubmitted } = useTicketStore();
+  const { avatar, setName, setEmail, setGitUser, setIsSubmitted } =
+    useTicketStore();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -37,6 +38,9 @@ const Form = () => {
   const validateInput = () => {
     const newErrors: { [key: string]: string } = {};
 
+    if (!avatar) {
+      newErrors.avatar = 'Avatar is required';
+    }
     if (formData.name === '') {
       newErrors.name = 'Name is required';
     }
@@ -74,7 +78,7 @@ const Form = () => {
     <form className='form' onSubmit={handleSubmit}>
       <fieldset>
         <legend className='sr-only'>Personal Information</legend>
-        <FileUpload />
+        <FileUpload error={errors.avatar} />
         <div className={`form-group ${errors.name ? 'is-invalid-input' : ''}`}>
           <label htmlFor='name'>Full Name</label>
           <Input
