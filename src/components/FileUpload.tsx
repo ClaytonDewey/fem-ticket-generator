@@ -63,7 +63,7 @@ const FileUpload = ({ error }: FileUploadProps) => {
     <div
       className={`form-group ${error ? 'is-invalid-input' : ''}`}
       {...getRootProps()}>
-      <label htmlFor='avatar'>Upload Avatar:</label>
+      <label htmlFor='avatar'>Upload Avatar</label>
       <div className='upload blur'>
         <div className='form-icon blur'>
           {avatar ? (

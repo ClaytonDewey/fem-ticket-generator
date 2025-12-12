@@ -60,10 +60,6 @@
       }
     }
 
-    p {
-      max-width: rem(514);
-    }
-
     p span {
       color: var(--orange-500);
     }
@@ -74,6 +70,15 @@
 
     &.complete {
       margin-block-end: rem(80);
+      gap: rem(69);
+
+      .header__text {
+        gap: rem(32);
+
+        p {
+          max-width: rem(514);
+        }
+      }
     }
 
     &::before {
@@ -88,10 +93,6 @@
         width: rem(208.66);
         height: rem(30);
       }
-    }
-
-    &__text {
-      gap: rem(32);
     }
   }
 
