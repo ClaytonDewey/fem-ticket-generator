@@ -8,7 +8,8 @@ import {
   PatternCircle,
   PatternLines,
   PatternTicket,
-  RotateIcon,
+  RotateLeft,
+  RotateRight,
   ZoomInIcon,
   ZoomOutIcon,
 } from '.';
@@ -33,8 +34,10 @@ const Icon = ({ name }: { name: string }) => {
       return <PatternLines />;
     case 'ticket':
       return <PatternTicket />;
-    case 'rotate':
-      return <RotateIcon />;
+    case 'rotate-left':
+      return <RotateLeft />;
+    case 'rotate-right':
+      return <RotateRight />;
     case 'zoom-in':
       return <ZoomInIcon />;
     case 'zoom-out':
