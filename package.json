@@ -1,6 +1,7 @@
 {
   "name": "fem-ticket-generator",
   "version": "0.1.0",
+  "homepage": "https://claytondewey.github.io/fem-ticket-generator/",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.14.0",

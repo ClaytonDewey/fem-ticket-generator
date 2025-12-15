@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/fem-ticket-generator/static/css/main.5d00e35b.css",
+    "main.js": "/fem-ticket-generator/static/js/main.eb94750e.js",
+    "static/js/453.6d0ae232.chunk.js": "/fem-ticket-generator/static/js/453.6d0ae232.chunk.js",
+    "static/media/background-desktop.png": "/fem-ticket-generator/static/media/background-desktop.aaca402b029d6080d68d.png",
+    "static/media/background-tablet.png": "/fem-ticket-generator/static/media/background-tablet.57cc8cedb90045e863ce.png",
+    "static/media/background-mobile.png": "/fem-ticket-generator/static/media/background-mobile.ff485619398faf341a96.png",
+    "static/media/pattern-lines.svg": "/fem-ticket-generator/static/media/pattern-lines.e90ac37869c36f4a4eab.svg",
+    "static/media/pattern-squiggly-line-top.svg": "/fem-ticket-generator/static/media/pattern-squiggly-line-top.39ecf486aeda97306f56.svg",
+    "static/media/pattern-squiggly-line-bottom-mobile-tablet.svg": "/fem-ticket-generator/static/media/pattern-squiggly-line-bottom-mobile-tablet.67888dd4c86951f7bef0.svg",
+    "static/media/pattern-squiggly-line-bottom-desktop.svg": "/fem-ticket-generator/static/media/pattern-squiggly-line-bottom-desktop.02c2143a87694e5503a4.svg",
+    "index.html": "/fem-ticket-generator/index.html",
+    "static/media/pattern-circle.svg": "/fem-ticket-generator/static/media/pattern-circle.026c51ac73da028e5646.svg",
+    "main.5d00e35b.css.map": "/fem-ticket-generator/static/css/main.5d00e35b.css.map",
+    "main.eb94750e.js.map": "/fem-ticket-generator/static/js/main.eb94750e.js.map",
+    "453.6d0ae232.chunk.js.map": "/fem-ticket-generator/static/js/453.6d0ae232.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5d00e35b.css",
+    "static/js/main.eb94750e.js"
+  ]
+}
