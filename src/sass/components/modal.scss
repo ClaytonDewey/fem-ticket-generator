@@ -1,0 +1,49 @@
+@use '../util' as *;
+
+.modal-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 34rem;
+  height: 382px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  outline: none;
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+
+  .header-container {
+    display: flex;
+    border-bottom: 2px solid rgba(143, 28, 163, 0.3725490196);
+    align-items: center;
+  }
+
+  .title-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    margin-left: 15px;
+    padding-bottom: 10px;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border-radius: 30px;
+    background-color: #e2f8ed;
+  }
+
+  .upload-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5px;
+  }
+}
